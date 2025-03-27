@@ -1,4 +1,4 @@
-# KyberVisionAPI12SharedDb
+![Logo](./docs/images/kyberVisionLogo01.png)
 
 A Sequelize SQLite module for the KyberVisionAPI12 and microservices suite of applications.
 
