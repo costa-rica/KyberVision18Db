@@ -32,6 +32,9 @@ const Video = sequelize.define(
     videoFileSizeInMb: {
       type: DataTypes.FLOAT,
     },
+    youTubeVideoId: {
+      type: DataTypes.STRING,
+    },
   },
   {
     tableName: "videos",
