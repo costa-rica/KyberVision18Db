@@ -1,4 +1,4 @@
-//NR: refactored 2025-03-13
+//NR: refactored 2025-05-17
 const { DataTypes } = require("sequelize");
 const sequelize = require("./_connection");
 
@@ -18,15 +18,24 @@ const GroupContract = sequelize.define(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    rightsFlags: {
-      type: DataTypes.TINYINT,
+    isSuperUser: {
+      type: DataTypes.BOOLEAN,
       allowNull: false,
-      defaultValue: 0,
+      defaultValue: false,
+    },
+    isAdmin: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: false,
+    },
+    isCoach: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: false,
     },
   },
   {
     tableName: "groupContracts",
-    timestamps: false,
   }
 );
 
