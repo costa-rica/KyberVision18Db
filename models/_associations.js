@@ -6,6 +6,8 @@ const Script = require("./Script");
 const SyncContract = require("./SyncContract");
 const Video = require("./Video");
 const Action = require("./Action");
+const GroupContract = require("./GroupContract");
+const User = require("./User");
 
 // Define associations **after** models are imported
 
@@ -36,5 +38,11 @@ SyncContract.hasMany(Action, {
   onDelete: "CASCADE",
 });
 Action.belongsTo(SyncContract, { foreignKey: "syncContractId" });
+
+// 🔹 User & Team Associations: GroupContract (AKA Tribes)
+User.hasMany(GroupContract, { foreignKey: "userId", onDelete: "CASCADE" });
+Team.hasMany(GroupContract, { foreignKey: "teamId", onDelete: "CASCADE" });
+GroupContract.belongsTo(User, { foreignKey: "userId" });
+GroupContract.belongsTo(Team, { foreignKey: "teamId" });
 
 console.log("✅ Associations have been set up");
