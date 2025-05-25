@@ -47,12 +47,12 @@ GroupContract.belongsTo(Team, { foreignKey: "teamId" });
 
 // ---- MODIFICATIONS KV15 -----
 
-// 🔹 SyncContract & Script Associations (1-N)
-SyncContract.hasMany(Script, {
-  foreignKey: "syncContractId",
+// 🔹 Script & SyncContract Associations (1-N)
+Script.hasMany(SyncContract, {
+  foreignKey: "scriptId",
   onDelete: "CASCADE",
 });
-Script.belongsTo(SyncContract, { foreignKey: "syncContractId" });
+SyncContract.belongsTo(Script, { foreignKey: "scriptId" });
 
 // 🔹 Script & Action Associations (1-N)
 Script.hasMany(Action, {
