@@ -18,7 +18,11 @@ const Action = sequelize.define(
       type: DataTypes.INTEGER,
       allowNull: true,
     },
-    syncContractId: {
+    // syncContractId: {
+    //   type: DataTypes.INTEGER,
+    //   allowNull: true,
+    // },
+    scriptId: {
       type: DataTypes.INTEGER,
       allowNull: true,
     },
@@ -49,6 +53,12 @@ const Action = sequelize.define(
   },
   {
     tableName: "actions",
+    indexes: [
+      {
+        unique: true,
+        fields: ["timestamp", "scriptId"],
+      },
+    ],
   }
 );
 

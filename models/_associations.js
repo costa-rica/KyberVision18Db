@@ -32,17 +32,33 @@ SyncContract.belongsTo(Video, { foreignKey: "videoId" });
 // 🔹 Video & Match Association (moved from Video.js)
 Video.belongsTo(Match, { foreignKey: "matchId", as: "match" });
 
-// 🔹 SyncContract & Action Associations (1-N)
-SyncContract.hasMany(Action, {
-  foreignKey: "syncContractId",
-  onDelete: "CASCADE",
-});
-Action.belongsTo(SyncContract, { foreignKey: "syncContractId" });
+// // 🔹 SyncContract & Action Associations (1-N)
+// SyncContract.hasMany(Action, {
+//   foreignKey: "syncContractId",
+//   onDelete: "CASCADE",
+// });
+// Action.belongsTo(SyncContract, { foreignKey: "syncContractId" });
 
 // 🔹 User & Team Associations: GroupContract (AKA Tribes)
 User.hasMany(GroupContract, { foreignKey: "userId", onDelete: "CASCADE" });
 Team.hasMany(GroupContract, { foreignKey: "teamId", onDelete: "CASCADE" });
 GroupContract.belongsTo(User, { foreignKey: "userId" });
 GroupContract.belongsTo(Team, { foreignKey: "teamId" });
+
+// ---- MODIFICATIONS KV15 -----
+
+// 🔹 SyncContract & Script Associations (1-N)
+SyncContract.hasMany(Script, {
+  foreignKey: "syncContractId",
+  onDelete: "CASCADE",
+});
+Script.belongsTo(SyncContract, { foreignKey: "syncContractId" });
+
+// 🔹 Script & Action Associations (1-N)
+Script.hasMany(Action, {
+  foreignKey: "scriptId",
+  onDelete: "CASCADE",
+});
+Action.belongsTo(Script, { foreignKey: "scriptId" });
 
 console.log("✅ Associations have been set up");
