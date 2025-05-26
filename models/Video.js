@@ -21,7 +21,6 @@ const Video = sequelize.define(
     },
     filename: {
       type: DataTypes.STRING,
-      allowNull: false,
     },
     url: {
       type: DataTypes.STRING,
@@ -32,7 +31,17 @@ const Video = sequelize.define(
     videoFileSizeInMb: {
       type: DataTypes.FLOAT,
     },
+    pathToVideoFile: {
+      type: DataTypes.STRING,
+    },
+    processingStatus: {
+      type: DataTypes.STRING,
+      defaultValue: "PENDING",
+    },
     youTubeVideoId: {
+      type: DataTypes.STRING,
+    },
+    originalVideoFilename: {
       type: DataTypes.STRING,
     },
   },
