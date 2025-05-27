@@ -10,7 +10,7 @@ const Match = sequelize.define(
       autoIncrement: true,
       primaryKey: true,
     },
-    leagueId: {
+    competitionContractId: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
@@ -26,10 +26,6 @@ const Match = sequelize.define(
       type: DataTypes.INTEGER,
       allowNull: true,
     },
-    groupContractId: {
-      type: DataTypes.INTEGER,
-      allowNull: true,
-    },
     matchDate: {
       type: DataTypes.DATEONLY,
       allowNull: false,
@@ -41,7 +37,6 @@ const Match = sequelize.define(
   },
   {
     tableName: "matches",
-    // timestamps: false,
   }
 );
 

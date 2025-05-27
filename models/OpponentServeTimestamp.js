@@ -25,7 +25,6 @@ const OpponentServeTimestamp = sequelize.define(
   },
   {
     tableName: "opponentServeTimestamps",
-    timestamps: false,
   }
 );
 

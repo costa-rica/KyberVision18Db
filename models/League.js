@@ -21,7 +21,6 @@ const League = sequelize.define(
   },
   {
     tableName: "leagues",
-    timestamps: false,
   }
 );
 

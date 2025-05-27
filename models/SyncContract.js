@@ -26,7 +26,6 @@ const SyncContract = sequelize.define(
   },
   {
     tableName: "syncContracts",
-    timestamps: false,
   }
 );
 

@@ -20,7 +20,6 @@ const Complex = sequelize.define(
   },
   {
     tableName: "complexes",
-    timestamps: false,
   }
 );
 

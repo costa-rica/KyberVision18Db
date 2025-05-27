@@ -25,7 +25,6 @@ const PlayerContract = sequelize.define(
   },
   {
     tableName: "playerContracts",
-    timestamps: false,
   }
 );
 

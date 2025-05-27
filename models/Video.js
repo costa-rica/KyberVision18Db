@@ -19,6 +19,10 @@ const Video = sequelize.define(
         key: "id",
       },
     },
+    groupContractId: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+    },
     filename: {
       type: DataTypes.STRING,
     },

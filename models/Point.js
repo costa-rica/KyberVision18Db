@@ -36,7 +36,6 @@ const Point = sequelize.define(
   },
   {
     tableName: "points",
-    timestamps: false,
   }
 );
 

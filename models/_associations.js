@@ -8,6 +8,8 @@ const Video = require("./Video");
 const Action = require("./Action");
 const GroupContract = require("./GroupContract");
 const User = require("./User");
+const League = require("./League");
+const CompetitionContract = require("./CompetitionContract");
 
 // Define associations **after** models are imported
 
@@ -60,5 +62,24 @@ Script.hasMany(Action, {
   onDelete: "CASCADE",
 });
 Action.belongsTo(Script, { foreignKey: "scriptId" });
+
+// 🔹 GroupContract & Video Associations (1-N)
+GroupContract.hasMany(Video, {
+  foreignKey: "groupContractId",
+  onDelete: "CASCADE",
+});
+Video.belongsTo(GroupContract, { foreignKey: "groupContractId" });
+
+// 🔹 League & Team Associations
+League.hasMany(CompetitionContract, {
+  foreignKey: "leagueId",
+  onDelete: "CASCADE",
+});
+Team.hasMany(CompetitionContract, {
+  foreignKey: "teamId",
+  onDelete: "CASCADE",
+});
+CompetitionContract.belongsTo(League, { foreignKey: "leagueId" });
+CompetitionContract.belongsTo(Team, { foreignKey: "teamId" });
 
 console.log("✅ Associations have been set up");

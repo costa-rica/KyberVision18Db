@@ -21,7 +21,6 @@ const CompetitionContract = sequelize.define(
   },
   {
     tableName: "competitionContracts",
-    timestamps: false,
   }
 );
 
