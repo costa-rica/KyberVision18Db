@@ -2,9 +2,16 @@
 
 A Sequelize SQLite module for the KyberVisionAPI14 and microservices suite of applications.
 
+- Renamed Tables
+
+  - CompetitionContracts: ContractLeagueTeam
+  - playerContracts: ContractTeamPlayer
+  - groupContracts: ContractTeamUser (Tribe)
+  - syncContracts: ContractScriptVideo
+
 - we are using YouTube to stream the videos
 
-### API v0.15.0
+### API v0.16.0
 
 ## installation
 
@@ -13,7 +20,7 @@ A Sequelize SQLite module for the KyberVisionAPI14 and microservices suite of ap
 
 ## import to other apps
 
-`yarn add file:../KyberVision15Db`
+`yarn add file:../KyberVision16Db`
 
 ## Environmental Variables
 

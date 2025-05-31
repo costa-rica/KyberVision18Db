@@ -2,8 +2,10 @@
 const { DataTypes } = require("sequelize");
 const sequelize = require("./_connection");
 
-const SyncContract = sequelize.define(
-  "SyncContract",
+// const SyncContract = sequelize.define(
+//   "SyncContract",
+const ContractScriptVideo = sequelize.define(
+  "ContractScriptVideo",
   {
     id: {
       type: DataTypes.INTEGER,
@@ -25,8 +27,8 @@ const SyncContract = sequelize.define(
     },
   },
   {
-    tableName: "syncContracts",
+    tableName: "contractScriptVideo",
   }
 );
 
-module.exports = SyncContract;
+module.exports = ContractScriptVideo;

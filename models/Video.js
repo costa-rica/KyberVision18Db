@@ -19,7 +19,8 @@ const Video = sequelize.define(
         key: "id",
       },
     },
-    groupContractId: {
+    // groupContractId: {
+    contractTeamUserId: {
       type: DataTypes.INTEGER,
       allowNull: true,
     },

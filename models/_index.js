@@ -6,17 +6,20 @@ require("./_associations");
 const User = require("./User");
 const Video = require("./Video");
 const Action = require("./Action");
-const CompetitionContract = require("./CompetitionContract");
+// const CompetitionContract = require("./CompetitionContract");
 const Complex = require("./Complex");
-const GroupContract = require("./GroupContract");
+const ContractLeagueTeam = require("./ContractLeagueTeam");
+const ContractScriptVideo = require("./ContractScriptVideo");
+const ContractTeamPlayer = require("./ContractTeamPlayer");
+const ContractTeamUser = require("./ContractTeamUser");
 const League = require("./League");
 const Match = require("./Match");
 const OpponentServeTimestamp = require("./OpponentServeTimestamp");
 const Player = require("./Player");
-const PlayerContract = require("./PlayerContract");
+// const PlayerContract = require("./PlayerContract");
 const Point = require("./Point");
 const Script = require("./Script");
-const SyncContract = require("./SyncContract");
+// const SyncContract = require("./SyncContract");
 const Team = require("./Team");
 
 module.exports = {
@@ -24,16 +27,19 @@ module.exports = {
   User,
   Video,
   Action,
-  CompetitionContract,
+  // CompetitionContract,
   Complex,
-  GroupContract,
+  ContractLeagueTeam,
+  ContractScriptVideo,
+  ContractTeamPlayer,
+  ContractTeamUser,
   League,
   Match,
   OpponentServeTimestamp,
   Player,
-  PlayerContract,
+  // PlayerContract,
   Point,
   Script,
-  SyncContract,
+  // SyncContract,
   Team,
 };
