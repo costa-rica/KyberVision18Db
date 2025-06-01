@@ -1,25 +1,19 @@
 const Player = require("./Player");
-// const PlayerContract = require("./PlayerContract");
 const ContractTeamPlayer = require("./ContractTeamPlayer");
 const Team = require("./Team");
-// const Match = require("./Match");
 const Session = require("./Session");
 const Script = require("./Script");
-// const SyncContract = require("./SyncContract");
 const ContractScriptVideo = require("./ContractScriptVideo");
 const Video = require("./Video");
 const Action = require("./Action");
-// const GroupContract = require("./GroupContract");
 const ContractTeamUser = require("./ContractTeamUser");
 const User = require("./User");
 const League = require("./League");
-// const CompetitionContract = require("./CompetitionContract");
 const ContractLeagueTeam = require("./ContractLeagueTeam");
 
 // Define associations **after** models are imported
 
 // 🔹 Player & Team Associations
-// Player.hasMany(PlayerContract, { foreignKey: "playerId", onDelete: "CASCADE" });
 Player.hasMany(ContractTeamPlayer, {
   foreignKey: "playerId",
   onDelete: "CASCADE",
@@ -28,12 +22,10 @@ Team.hasMany(ContractTeamPlayer, { foreignKey: "teamId", onDelete: "CASCADE" });
 ContractTeamPlayer.belongsTo(Player, { foreignKey: "playerId" });
 ContractTeamPlayer.belongsTo(Team, { foreignKey: "teamId" });
 
-// 🔹 Match & Team Associations
-// Match.belongsTo(Team, { foreignKey: "teamIdAnalyzed", as: "teamOne" }); // Team analyzed
+// 🔹 Session & Team Associations
 Session.belongsTo(Team, { foreignKey: "teamId" }); // Team opponent
 
 // 🔹 Script & ContractScriptVideo Associations (1-N)
-// Script.hasMany(SyncContract, { foreignKey: "scriptId", onDelete: "CASCADE" });
 Script.hasMany(ContractScriptVideo, {
   foreignKey: "scriptId",
   onDelete: "CASCADE",
@@ -50,20 +42,11 @@ ContractScriptVideo.belongsTo(Video, { foreignKey: "videoId" });
 // 🔹 Video & Session Association (moved from Video.js)
 Video.belongsTo(Session, { foreignKey: "sessionId" });
 
-// // 🔹 SyncContract & Action Associations (1-N)
-// SyncContract.hasMany(Action, {
-//   foreignKey: "syncContractId",
-//   onDelete: "CASCADE",
-// });
-// Action.belongsTo(SyncContract, { foreignKey: "syncContractId" });
-
 // 🔹 User & Team Associations: ContractTeamUser (AKA Tribes)
 User.hasMany(ContractTeamUser, { foreignKey: "userId", onDelete: "CASCADE" });
 Team.hasMany(ContractTeamUser, { foreignKey: "teamId", onDelete: "CASCADE" });
 ContractTeamUser.belongsTo(User, { foreignKey: "userId" });
 ContractTeamUser.belongsTo(Team, { foreignKey: "teamId" });
-
-// ---- MODIFICATIONS KV15 -----
 
 // 🔹 Script & ContractScriptVideo Associations (1-N)
 Script.hasMany(ContractScriptVideo, {
@@ -87,7 +70,6 @@ ContractTeamUser.hasMany(Video, {
 Video.belongsTo(ContractTeamUser, { foreignKey: "contractTeamUserId" });
 
 // 🔹 League & Team Associations
-// League.hasMany(CompetitionContract, {
 League.hasMany(ContractLeagueTeam, {
   foreignKey: "leagueId",
   onDelete: "CASCADE",

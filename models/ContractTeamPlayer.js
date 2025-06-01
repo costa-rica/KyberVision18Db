@@ -1,9 +1,6 @@
-// NR: refactored 2025-03-13
 const { DataTypes } = require("sequelize");
 const sequelize = require("./_connection");
 
-// const PlayerContract = sequelize.define(
-//   "PlayerContract",
 const ContractTeamPlayer = sequelize.define(
   "ContractTeamPlayer",
   {

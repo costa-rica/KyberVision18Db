@@ -18,10 +18,6 @@ const Action = sequelize.define(
       type: DataTypes.INTEGER,
       allowNull: true,
     },
-    // syncContractId: {
-    //   type: DataTypes.INTEGER,
-    //   allowNull: true,
-    // },
     scriptId: {
       type: DataTypes.INTEGER,
       allowNull: true,
