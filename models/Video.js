@@ -42,7 +42,7 @@ const Video = sequelize.define(
     },
     processingStatus: {
       type: DataTypes.STRING,
-      defaultValue: "PENDING",
+      defaultValue: "pending",
     },
     youTubeVideoId: {
       type: DataTypes.STRING,
