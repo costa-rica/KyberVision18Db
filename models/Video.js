@@ -1,7 +1,7 @@
 // NR: refactored 2025-03-13
 const { DataTypes } = require("sequelize");
 const sequelize = require("./_connection");
-const Match = require("./Match");
+const Session = require("./Session");
 
 const Video = sequelize.define(
   "Video",
@@ -11,11 +11,12 @@ const Video = sequelize.define(
       autoIncrement: true,
       primaryKey: true,
     },
-    matchId: {
+    // matchId: {
+    sessionId: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: Match,
+        model: Session,
         key: "id",
       },
     },

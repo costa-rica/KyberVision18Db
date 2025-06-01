@@ -2,7 +2,8 @@ const Player = require("./Player");
 // const PlayerContract = require("./PlayerContract");
 const ContractTeamPlayer = require("./ContractTeamPlayer");
 const Team = require("./Team");
-const Match = require("./Match");
+// const Match = require("./Match");
+const Session = require("./Session");
 const Script = require("./Script");
 // const SyncContract = require("./SyncContract");
 const ContractScriptVideo = require("./ContractScriptVideo");
@@ -28,8 +29,8 @@ ContractTeamPlayer.belongsTo(Player, { foreignKey: "playerId" });
 ContractTeamPlayer.belongsTo(Team, { foreignKey: "teamId" });
 
 // 🔹 Match & Team Associations
-Match.belongsTo(Team, { foreignKey: "teamIdAnalyzed", as: "teamOne" }); // Team analyzed
-Match.belongsTo(Team, { foreignKey: "teamIdOpponent", as: "teamTwo" }); // Team opponent
+// Match.belongsTo(Team, { foreignKey: "teamIdAnalyzed", as: "teamOne" }); // Team analyzed
+Session.belongsTo(Team, { foreignKey: "teamId" }); // Team opponent
 
 // 🔹 Script & ContractScriptVideo Associations (1-N)
 // Script.hasMany(SyncContract, { foreignKey: "scriptId", onDelete: "CASCADE" });
@@ -46,8 +47,8 @@ Video.hasMany(ContractScriptVideo, {
 });
 ContractScriptVideo.belongsTo(Video, { foreignKey: "videoId" });
 
-// 🔹 Video & Match Association (moved from Video.js)
-Video.belongsTo(Match, { foreignKey: "matchId", as: "match" });
+// 🔹 Video & Session Association (moved from Video.js)
+Video.belongsTo(Session, { foreignKey: "sessionId" });
 
 // // 🔹 SyncContract & Action Associations (1-N)
 // SyncContract.hasMany(Action, {
@@ -86,15 +87,16 @@ ContractTeamUser.hasMany(Video, {
 Video.belongsTo(ContractTeamUser, { foreignKey: "contractTeamUserId" });
 
 // 🔹 League & Team Associations
-League.hasMany(CompetitionContract, {
+// League.hasMany(CompetitionContract, {
+League.hasMany(ContractLeagueTeam, {
   foreignKey: "leagueId",
   onDelete: "CASCADE",
 });
-Team.hasMany(CompetitionContract, {
+Team.hasMany(ContractLeagueTeam, {
   foreignKey: "teamId",
   onDelete: "CASCADE",
 });
-CompetitionContract.belongsTo(League, { foreignKey: "leagueId" });
-CompetitionContract.belongsTo(Team, { foreignKey: "teamId" });
+ContractLeagueTeam.belongsTo(League, { foreignKey: "leagueId" });
+ContractLeagueTeam.belongsTo(Team, { foreignKey: "teamId" });
 
 console.log("✅ Associations have been set up");

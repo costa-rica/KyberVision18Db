@@ -13,7 +13,7 @@ const ContractScriptVideo = require("./ContractScriptVideo");
 const ContractTeamPlayer = require("./ContractTeamPlayer");
 const ContractTeamUser = require("./ContractTeamUser");
 const League = require("./League");
-const Match = require("./Match");
+const Session = require("./Session");
 const OpponentServeTimestamp = require("./OpponentServeTimestamp");
 const Player = require("./Player");
 // const PlayerContract = require("./PlayerContract");
@@ -34,7 +34,7 @@ module.exports = {
   ContractTeamPlayer,
   ContractTeamUser,
   League,
-  Match,
+  Session,
   OpponentServeTimestamp,
   Player,
   // PlayerContract,

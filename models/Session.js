@@ -2,32 +2,27 @@
 const { DataTypes } = require("sequelize");
 const sequelize = require("./_connection");
 
-const Match = sequelize.define(
-  "Match",
+// const Match = sequelize.define(
+//   "Match",
+const Session = sequelize.define(
+  "Session",
   {
     id: {
       type: DataTypes.INTEGER,
       autoIncrement: true,
       primaryKey: true,
     },
-    competitionContractId: {
+    // competitionContractId: {
+    contractLeagueTeamId: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    teamIdAnalyzed: {
+    teamId: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    teamIdOpponent: {
-      type: DataTypes.INTEGER,
-      allowNull: true,
-    },
-    teamIdWinner: {
-      type: DataTypes.INTEGER,
-      allowNull: true,
-    },
-    matchDate: {
-      type: DataTypes.DATEONLY,
+    sessionDate: {
+      type: DataTypes.DATE,
       allowNull: false,
     },
     city: {
@@ -36,8 +31,8 @@ const Match = sequelize.define(
     },
   },
   {
-    tableName: "matches",
+    tableName: "sessions",
   }
 );
 
-module.exports = Match;
+module.exports = Session;

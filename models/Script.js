@@ -10,7 +10,8 @@ const Script = sequelize.define(
       autoIncrement: true,
       primaryKey: true,
     },
-    matchId: {
+    // matchId: {
+    sessionId: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
