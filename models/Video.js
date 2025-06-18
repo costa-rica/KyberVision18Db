@@ -40,9 +40,13 @@ const Video = sequelize.define(
     pathToVideoFile: {
       type: DataTypes.STRING,
     },
-    processingStatus: {
-      type: DataTypes.STRING,
-      defaultValue: "pending",
+    processingCompleted: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false,
+    },
+    processingFailed: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false,
     },
     youTubeVideoId: {
       type: DataTypes.STRING,
