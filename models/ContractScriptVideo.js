@@ -1,9 +1,7 @@
-// NR: refactored 2025-03-13
 const { DataTypes } = require("sequelize");
 const sequelize = require("./_connection");
 
-// const SyncContract = sequelize.define(
-//   "SyncContract",
+// Formerly  "SyncContract",
 const ContractScriptVideo = sequelize.define(
   "ContractScriptVideo",
   {
@@ -20,7 +18,7 @@ const ContractScriptVideo = sequelize.define(
       type: DataTypes.INTEGER,
       allowNull: true,
     },
-    deltaTime: {
+    deltaTimeInSeconds: {
       type: DataTypes.FLOAT,
       allowNull: true,
       defaultValue: 0.0,
