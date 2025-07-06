@@ -81,4 +81,11 @@ Team.hasMany(ContractLeagueTeam, {
 ContractLeagueTeam.belongsTo(League, { foreignKey: "leagueId" });
 ContractLeagueTeam.belongsTo(Team, { foreignKey: "teamId" });
 
+// Session cascade deletes to Script
+Session.hasMany(Script, {
+  foreignKey: "sessionId",
+  onDelete: "CASCADE",
+});
+Script.belongsTo(Session, { foreignKey: "sessionId" });
+
 console.log("✅ Associations have been set up");
