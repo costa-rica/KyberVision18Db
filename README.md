@@ -11,7 +11,7 @@ A Sequelize SQLite module for the KyberVisionAPI14 and microservices suite of ap
 
 - we are using YouTube to stream the videos
 
-### API v0.16.0
+### API v0.17.0
 
 ## installation
 
@@ -20,7 +20,7 @@ A Sequelize SQLite module for the KyberVisionAPI14 and microservices suite of ap
 
 ## import to other apps
 
-`yarn add file:../KyberVision16Db`
+`yarn add file:../KyberVision17Db`
 
 ## Environmental Variables
 
