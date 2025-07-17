@@ -3,7 +3,8 @@ const ContractTeamPlayer = require("./ContractTeamPlayer");
 const Team = require("./Team");
 const Session = require("./Session");
 const Script = require("./Script");
-const ContractScriptVideo = require("./ContractScriptVideo");
+// const ContractScriptVideo = require("./ContractScriptVideo");
+const ContractActionVideo = require("./ContractActionVideo");
 const Video = require("./Video");
 const Action = require("./Action");
 const ContractTeamUser = require("./ContractTeamUser");
@@ -12,6 +13,21 @@ const League = require("./League");
 const ContractLeagueTeam = require("./ContractLeagueTeam");
 
 // Define associations **after** models are imported
+// 🔹 Action & Video Associations (0-N)
+//    - > links actions to videos by creating a row in contractActionVideo
+//    - > onDelete: "CASCADE" means that if an action is deleted, all contractActionVideo rows for that action will also be deleted
+Action.hasMany(ContractActionVideo, {
+  foreignKey: "actionId",
+  onDelete: "CASCADE",
+});
+ContractActionVideo.belongsTo(Action, { foreignKey: "actionId" });
+
+// 🔹 Video & Action Associations (0-N)
+Video.hasMany(ContractActionVideo, {
+  foreignKey: "videoId",
+  onDelete: "CASCADE",
+});
+ContractActionVideo.belongsTo(Video, { foreignKey: "videoId" });
 
 // 🔹 Player & Team Associations
 Player.hasMany(ContractTeamPlayer, {
@@ -25,19 +41,19 @@ ContractTeamPlayer.belongsTo(Team, { foreignKey: "teamId" });
 // 🔹 Session & Team Associations
 Session.belongsTo(Team, { foreignKey: "teamId" }); // Team opponent
 
-// 🔹 Script & ContractScriptVideo Associations (1-N)
-Script.hasMany(ContractScriptVideo, {
-  foreignKey: "scriptId",
-  onDelete: "CASCADE",
-});
-ContractScriptVideo.belongsTo(Script, { foreignKey: "scriptId" });
+// // 🔹 Script & ContractScriptVideo Associations (1-N)
+// Script.hasMany(ContractScriptVideo, {
+//   foreignKey: "scriptId",
+//   onDelete: "CASCADE",
+// });
+// ContractScriptVideo.belongsTo(Script, { foreignKey: "scriptId" });
 
-// 🔹 Video & ContractScriptVideo Associations (0-N)
-Video.hasMany(ContractScriptVideo, {
-  foreignKey: "videoId",
-  onDelete: "CASCADE",
-});
-ContractScriptVideo.belongsTo(Video, { foreignKey: "videoId" });
+// // 🔹 Video & ContractScriptVideo Associations (0-N)
+// Video.hasMany(ContractScriptVideo, {
+//   foreignKey: "videoId",
+//   onDelete: "CASCADE",
+// });
+// ContractScriptVideo.belongsTo(Video, { foreignKey: "videoId" });
 
 // 🔹 Video & Session Association (moved from Video.js)
 Video.belongsTo(Session, { foreignKey: "sessionId" });
@@ -48,12 +64,12 @@ Team.hasMany(ContractTeamUser, { foreignKey: "teamId", onDelete: "CASCADE" });
 ContractTeamUser.belongsTo(User, { foreignKey: "userId" });
 ContractTeamUser.belongsTo(Team, { foreignKey: "teamId" });
 
-// 🔹 Script & ContractScriptVideo Associations (1-N)
-Script.hasMany(ContractScriptVideo, {
-  foreignKey: "scriptId",
-  onDelete: "CASCADE",
-});
-ContractScriptVideo.belongsTo(Script, { foreignKey: "scriptId" });
+// // 🔹 Script & ContractScriptVideo Associations (1-N)
+// Script.hasMany(ContractScriptVideo, {
+//   foreignKey: "scriptId",
+//   onDelete: "CASCADE",
+// });
+// ContractScriptVideo.belongsTo(Script, { foreignKey: "scriptId" });
 
 // 🔹 Script & Action Associations (1-N)
 Script.hasMany(Action, {
