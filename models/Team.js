@@ -16,11 +16,15 @@ const Team = sequelize.define(
     },
     city: {
       type: DataTypes.STRING,
-      allowNull: false,
     },
     coachName: {
       type: DataTypes.STRING,
-      allowNull: false,
+    },
+    description: {
+      type: DataTypes.STRING,
+    },
+    image: {
+      type: DataTypes.STRING,
     },
   },
   {

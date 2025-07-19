@@ -4,7 +4,7 @@ const Team = require("./Team");
 const Session = require("./Session");
 const Script = require("./Script");
 // const ContractScriptVideo = require("./ContractScriptVideo");
-const ContractActionVideo = require("./ContractActionVideo");
+const ContractVideoAction = require("./ContractVideoAction");
 const Video = require("./Video");
 const Action = require("./Action");
 const ContractTeamUser = require("./ContractTeamUser");
@@ -16,18 +16,18 @@ const ContractLeagueTeam = require("./ContractLeagueTeam");
 // 🔹 Action & Video Associations (0-N)
 //    - > links actions to videos by creating a row in contractActionVideo
 //    - > onDelete: "CASCADE" means that if an action is deleted, all contractActionVideo rows for that action will also be deleted
-Action.hasMany(ContractActionVideo, {
+Action.hasMany(ContractVideoAction, {
   foreignKey: "actionId",
   onDelete: "CASCADE",
 });
-ContractActionVideo.belongsTo(Action, { foreignKey: "actionId" });
+ContractVideoAction.belongsTo(Action, { foreignKey: "actionId" });
 
 // 🔹 Video & Action Associations (0-N)
-Video.hasMany(ContractActionVideo, {
+Video.hasMany(ContractVideoAction, {
   foreignKey: "videoId",
   onDelete: "CASCADE",
 });
-ContractActionVideo.belongsTo(Video, { foreignKey: "videoId" });
+ContractVideoAction.belongsTo(Video, { foreignKey: "videoId" });
 
 // 🔹 Player & Team Associations
 Player.hasMany(ContractTeamPlayer, {

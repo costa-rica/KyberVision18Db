@@ -2,15 +2,15 @@ const { DataTypes } = require("sequelize");
 const sequelize = require("./_connection");
 
 // Formerly  "SyncContract",
-const ContractScriptVideo = sequelize.define(
-  "ContractScriptVideo",
+const ContractVideoAction = sequelize.define(
+  "ContractVideoAction",
   {
     id: {
       type: DataTypes.INTEGER,
       autoIncrement: true,
       primaryKey: true,
     },
-    scriptId: {
+    actionId: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
@@ -25,8 +25,8 @@ const ContractScriptVideo = sequelize.define(
     },
   },
   {
-    tableName: "contractScriptVideo",
+    tableName: "contractVideoAction",
   }
 );
 
-module.exports = ContractScriptVideo;
+module.exports = ContractVideoAction;

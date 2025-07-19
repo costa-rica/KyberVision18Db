@@ -9,7 +9,7 @@ const Action = require("./Action");
 // const CompetitionContract = require("./CompetitionContract");
 const Complex = require("./Complex");
 const ContractLeagueTeam = require("./ContractLeagueTeam");
-const ContractScriptVideo = require("./ContractScriptVideo");
+const ContractVideoAction = require("./ContractVideoAction");
 const ContractTeamPlayer = require("./ContractTeamPlayer");
 const ContractTeamUser = require("./ContractTeamUser");
 const League = require("./League");
@@ -30,7 +30,7 @@ module.exports = {
   // CompetitionContract,
   Complex,
   ContractLeagueTeam,
-  ContractScriptVideo,
+  ContractVideoAction,
   ContractTeamPlayer,
   ContractTeamUser,
   League,

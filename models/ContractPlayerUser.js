@@ -1,8 +1,8 @@
 const { DataTypes } = require("sequelize");
 const sequelize = require("./_connection");
 
-const ContractTeamPlayer = sequelize.define(
-  "ContractTeamPlayer",
+const ContractPlayerUser = sequelize.define(
+  "ContractPlayerUser",
   {
     id: {
       type: DataTypes.INTEGER,
@@ -13,23 +13,14 @@ const ContractTeamPlayer = sequelize.define(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    teamId: {
+    userId: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    shirtNumber: {
-      type: DataTypes.INTEGER,
-    },
-    position: {
-      type: DataTypes.STRING,
-    },
-    role: {
-      type: DataTypes.STRING,
-    },
   },
   {
-    tableName: "contractTeamPlayer",
+    tableName: "contractPlayerUser",
   }
 );
 
-module.exports = ContractTeamPlayer;
+module.exports = ContractPlayerUser;

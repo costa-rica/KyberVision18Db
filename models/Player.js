@@ -21,6 +21,9 @@ const Player = sequelize.define(
       type: DataTypes.DATE,
       allowNull: true,
     },
+    image: {
+      type: DataTypes.STRING,
+    },
   },
   {
     tableName: "players",
