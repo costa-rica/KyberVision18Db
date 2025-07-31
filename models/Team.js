@@ -26,6 +26,11 @@ const Team = sequelize.define(
     image: {
       type: DataTypes.STRING,
     },
+    visibility: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      defaultValue: "Private",
+    }, // "Private", "Public", or "On invitation"
   },
   {
     tableName: "teams",

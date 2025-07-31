@@ -15,6 +15,13 @@ const Script = sequelize.define(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
+    timestampReferenceFirstAction: {
+      type: DataTypes.DATE,
+    },
+    isScriptingLive: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false,
+    },
   },
   {
     tableName: "scripts",

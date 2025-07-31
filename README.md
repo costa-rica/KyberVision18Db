@@ -7,7 +7,8 @@ A Sequelize SQLite module for the KyberVisionAPI14 and microservices suite of ap
   - CompetitionContracts: ContractLeagueTeam
   - playerContracts: ContractTeamPlayer
   - groupContracts: ContractTeamUser (Tribe)
-  - syncContracts: ContractScriptVideo
+  - syncContracts: ContractVideoAction
+    - renamed and restructured to delta time for each action
 
 - we are using YouTube to stream the videos
 
