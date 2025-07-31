@@ -10,6 +10,7 @@ const ContractTeamUser = require("./ContractTeamUser");
 const User = require("./User");
 const League = require("./League");
 const ContractLeagueTeam = require("./ContractLeagueTeam");
+const ContractPlayerUser = require("./ContractPlayerUser");
 
 // Define associations **after** models are imported
 // 🔹 Action & Video Associations (0-N)
@@ -36,6 +37,15 @@ Player.hasMany(ContractTeamPlayer, {
 Team.hasMany(ContractTeamPlayer, { foreignKey: "teamId", onDelete: "CASCADE" });
 ContractTeamPlayer.belongsTo(Player, { foreignKey: "playerId" });
 ContractTeamPlayer.belongsTo(Team, { foreignKey: "teamId" });
+
+// 🔹 Player & User Associations
+Player.hasMany(ContractPlayerUser, {
+  foreignKey: "playerId",
+  onDelete: "CASCADE",
+});
+User.hasMany(ContractPlayerUser, { foreignKey: "userId", onDelete: "CASCADE" });
+ContractPlayerUser.belongsTo(Player, { foreignKey: "playerId" });
+ContractPlayerUser.belongsTo(User, { foreignKey: "userId" });
 
 // 🔹 Session & Team Associations
 Session.belongsTo(Team, { foreignKey: "teamId" }); // Team opponent
