@@ -23,6 +23,9 @@ const ContractTeamPlayer = sequelize.define(
     position: {
       type: DataTypes.STRING,
     },
+    positionAbbreviation: {
+      type: DataTypes.STRING,
+    },
     role: {
       type: DataTypes.STRING,
     },
