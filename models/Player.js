@@ -23,6 +23,7 @@ const Player = sequelize.define(
     },
     image: {
       type: DataTypes.STRING,
+      defaultValue: "_playerDefaultRedditAlien.png",
     },
   },
   {
