@@ -39,11 +39,11 @@ ContractTeamPlayer.belongsTo(Player, { foreignKey: "playerId" });
 ContractTeamPlayer.belongsTo(Team, { foreignKey: "teamId" });
 
 // 🔹 Player & User Associations
-Player.hasMany(ContractPlayerUser, {
+Player.hasOne(ContractPlayerUser, {
   foreignKey: "playerId",
   onDelete: "CASCADE",
 });
-User.hasMany(ContractPlayerUser, { foreignKey: "userId", onDelete: "CASCADE" });
+User.hasOne(ContractPlayerUser, { foreignKey: "userId", onDelete: "CASCADE" });
 ContractPlayerUser.belongsTo(Player, { foreignKey: "playerId" });
 ContractPlayerUser.belongsTo(User, { foreignKey: "userId" });
 

@@ -12,10 +12,12 @@ const ContractPlayerUser = sequelize.define(
     playerId: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      unique: true,
     },
     userId: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      unique: true,
     },
   },
   {
