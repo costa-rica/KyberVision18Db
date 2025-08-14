@@ -27,7 +27,9 @@ const Session = sequelize.define(
     },
     city: {
       type: DataTypes.STRING,
-      allowNull: false,
+    },
+    sessionName: {
+      type: DataTypes.STRING,
     },
   },
   {
