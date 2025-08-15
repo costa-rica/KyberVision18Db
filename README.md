@@ -1,6 +1,6 @@
 ![Logo](./docs/images/kyberVisionLogo01.png)
 
-A Sequelize SQLite module for the KyberVisionAPI14 and microservices suite of applications.
+A Sequelize SQLite module for the KyberVisionAPI18 and microservices suite of applications.
 
 - Renamed Tables
 
@@ -12,7 +12,7 @@ A Sequelize SQLite module for the KyberVisionAPI14 and microservices suite of ap
 
 - we are using YouTube to stream the videos
 
-### API v0.17.0
+### API v0.18.0
 
 ## installation
 
@@ -21,7 +21,7 @@ A Sequelize SQLite module for the KyberVisionAPI14 and microservices suite of ap
 
 ## import to other apps
 
-`yarn add file:../KyberVision17Db`
+`yarn add file:../KyberVision18Db`
 
 ## Environmental Variables
 
