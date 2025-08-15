@@ -28,7 +28,6 @@ module.exports = {
   User,
   Video,
   Action,
-  // CompetitionContract,
   Complex,
   ContractLeagueTeam,
   ContractVideoAction,
@@ -39,9 +38,7 @@ module.exports = {
   Session,
   OpponentServeTimestamp,
   Player,
-  // PlayerContract,
   Point,
   Script,
-  // SyncContract,
   Team,
 };
