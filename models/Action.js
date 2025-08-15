@@ -46,6 +46,25 @@ const Action = sequelize.define(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    setNumber: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
+        min: 1,
+        max: 5,
+      },
+    },
+    scoreTeamAnalyzed: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    scoreTeamOther: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    rotation: {
+      type: DataTypes.STRING,
+    },
   },
   {
     tableName: "actions",

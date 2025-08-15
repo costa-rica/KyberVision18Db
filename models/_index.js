@@ -18,7 +18,7 @@ const Session = require("./Session");
 const OpponentServeTimestamp = require("./OpponentServeTimestamp");
 const Player = require("./Player");
 // const PlayerContract = require("./PlayerContract");
-const Point = require("./Point");
+// const Point = require("./Point");
 const Script = require("./Script");
 // const SyncContract = require("./SyncContract");
 const Team = require("./Team");
@@ -38,7 +38,7 @@ module.exports = {
   Session,
   OpponentServeTimestamp,
   Player,
-  Point,
+  // Point,
   Script,
   Team,
 };
