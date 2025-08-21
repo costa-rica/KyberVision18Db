@@ -11,6 +11,24 @@ const User = require("./User");
 const League = require("./League");
 const ContractLeagueTeam = require("./ContractLeagueTeam");
 const ContractPlayerUser = require("./ContractPlayerUser");
+const ContractUserAction = require("./ContractUserAction");
+
+// Define associations **after** models are imported
+// 🔹 Action & User Associations (0-N)
+//    - > links actions to videos by creating a row in contractActionVideo
+//    - > onDelete: "CASCADE" means that if an action is deleted, all contractActionVideo rows for that action will also be deleted
+Action.hasMany(ContractUserAction, {
+  foreignKey: "actionId",
+  onDelete: "CASCADE",
+});
+ContractUserAction.belongsTo(Action, { foreignKey: "actionId" });
+
+// 🔹 User & Action Associations (0-N)
+User.hasMany(ContractUserAction, {
+  foreignKey: "userId",
+  onDelete: "CASCADE",
+});
+ContractUserAction.belongsTo(User, { foreignKey: "userId" });
 
 // Define associations **after** models are imported
 // 🔹 Action & Video Associations (0-N)
