@@ -12,7 +12,6 @@ const ContractUserAction = sequelize.define(
     userId: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      unique: true,
     },
     actionId: {
       type: DataTypes.INTEGER,
@@ -21,6 +20,13 @@ const ContractUserAction = sequelize.define(
   },
   {
     tableName: "contractUserAction",
+    indexes: [
+      {
+        name: "contractUserAction_user_action_unique",
+        unique: true,
+        fields: ["userId", "actionId"],
+      },
+    ],
   }
 );
 
