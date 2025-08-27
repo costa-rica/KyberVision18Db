@@ -23,6 +23,7 @@ const Script = require("./Script");
 // const SyncContract = require("./SyncContract");
 const Team = require("./Team");
 const ContractUserAction = require("./ContractUserAction");
+const PendingInvitations = require("./PendingInvitations");
 
 module.exports = {
   sequelize,
@@ -43,4 +44,5 @@ module.exports = {
   Script,
   Team,
   ContractUserAction,
+  PendingInvitations,
 };
