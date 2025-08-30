@@ -17,6 +17,10 @@ const ContractUserAction = sequelize.define(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
+    sessionId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
   },
   {
     tableName: "contractUserAction",
